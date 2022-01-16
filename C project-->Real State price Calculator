@@ -1,0 +1,87 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s1[100],s2[100],prime[100]="prime",proper[50]="properly",s3[50],s4[10]="yes",s5[50];
+    long price;
+    int size=0;
+  printf("Do you want to buy plot or a house\n");
+  printf("Press 1 for plot\nPress 2 for house\n");
+  int choice;
+  scanf("%d",&choice);
+  switch(choice)
+  {
+      case 1: printf("You have chosen to buy a plot\n"); // for plot
+      printf("Whether you want to buy a plot in prime location or out of city\n");
+      printf("Enter prime for prime location and outcourts for out of city\n");
+      scanf(" ");
+      gets(s1);
+      if(!strcmp(s1,prime))
+      {
+          price=1000000;
+      }
+      else
+      {
+          price=500000;
+      }
+      printf("size of plot (in square feet): ");
+      scanf("%d",&size);
+      price=(price+85*size);
+      printf("The final price of the plot you have to pay : %d\n",price);   
+      printf("Are you ready to pay\n");
+      scanf(" ");
+      gets(s3);
+      if(!strcmp(s3,s4))
+      {
+          printf("enter the owner name : ");
+           scanf(" ");
+           gets(s5);
+           printf("The plot has been sold at price %d to ",price);
+           puts(s5);
+      }
+      else
+      {
+          printf("No problem");
+      }
+      break;
+      case 2:printf("You have chosen to buy a house\n");
+      printf("Whether you want to buy in prime location or outcourts of city\n");
+      printf("Enter prime for prime location and outcourts for out of city\n");
+      scanf(" ");
+      gets(s1);
+      if(!strcmp(s1,prime))
+      {
+          price=2000000;
+      }else
+      {
+          price=1000000;
+      }
+      printf("Enter the size of house (in square feets):");
+      scanf("%d",&size);
+        price=price+125*size;
+        printf("Whether the house is properly built\n");
+        printf("Enter the properly for properly built house otherwise enter not\n");
+        scanf(" ");
+        gets(s2);
+        if(!strcmp(s2,proper))
+        {
+            price=price+500000;
+            printf("Are you ready to  pay =");
+            scanf(" ");
+            gets(s3);
+            printf("Enter the owner name : ");
+            scanf(" ");
+            gets(s5);
+            printf("The house has been sold at %d to ",price);
+            puts(s5);
+        } else
+        {
+            printf("NO PROBLEM ");
+        }
+       
+        break;
+      default:printf("wrong input");
+      break;
+  }
+    return 0;
+}
